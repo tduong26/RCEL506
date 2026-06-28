@@ -92,12 +92,11 @@ for i in range(num_columns):
 plt.tight_layout()
 st.pyplot(fig)
 
-# 3. LAYOUT DOWNSTREAM DESCRIPTION BLOCKS WITH STYLED CALLOUT FOR COLUMN 3
+# 3. LAYOUT DOWNSTREAM DESCRIPTION BLOCKS
 st.markdown("---")
 cols = st.columns(4)
 for i in range(num_columns):
     with cols[i]:
         st.subheader(titles[i])
-        if i == 2:
-            st.error("Highlight: The majority of vehicles on the road would still run on gasoline.")
+        # Removed the st.error() line from here so the red table banner disappears
         st.markdown(descriptions[i])
